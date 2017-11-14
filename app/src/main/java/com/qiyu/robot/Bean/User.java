@@ -6,46 +6,54 @@ package com.qiyu.robot.Bean;
 
 public class User {
 
-    private String userId;//用户Id
+    private String id;//用户id
 
-    private String userName;//用户名
+    private String name;//用户名
 
-    private String userInfo;//个性签名
+    private String info;//个性签名
 
+    private String sex;//性别
 
-    private String userSex;
+    private int imgHead;//头像
 
-
-    public String getUserId() {
-        return userId;
+    public String getId() {
+        return id;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getName() {
+        return name;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getUserInfo() {
-        return userInfo;
+    public String getInfo() {
+        return info;
     }
 
-    public void setUserInfo(String userInfo) {
-        this.userInfo = userInfo;
+    public void setInfo(String info) {
+        this.info = info;
     }
 
-    public String getUserSex() {
-        return userSex;
+    public String getSex() {
+        return sex;
     }
 
-    public void setUserSex(String userSex) {
-        this.userSex = userSex;
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public int getImgHead() {
+        return imgHead;
+    }
+
+    public void setImgHead(int imgHead) {
+        this.imgHead = imgHead;
     }
 
 }

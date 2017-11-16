@@ -8,16 +8,25 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.qiyu.robot.Adapter.MsgAdapter;
 import com.qiyu.robot.Bean.User;
+import com.qiyu.robot.util.HttpUtil;
+import com.qiyu.robot.util.Utility;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.Response;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -66,8 +75,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        navView.setItemIconTintList(null);
-        navView.setCheckedItem(R.id.nav_home);
+//        navView.setItemIconTintList(null);
+//        navView.setCheckedItem(R.id.nav_home);
         navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -90,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
                     msgRecyclerView.scrollToPosition(msgList.size() - 1);//定位到最后一行
                     inputText.setText("");//清空输入框
 
-                    /*HttpUtil.sendOkHttpRequest("http://www.tuling123.com/openapi/api", content,new Callback() {
+                    HttpUtil.sendOkHttpRequest("http://www.tuling123.com/openapi/api", content,new Callback() {
                         @Override
                         public void onFailure(Call call, IOException e) {
                             MainActivity.this.runOnUiThread(new Runnable() {
@@ -117,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
                                 });
                             }
                         }
-                    });*/
+                    });
                 }
 
             }
